@@ -84,7 +84,7 @@ const Modal = ({ isOpen, onClose, onSubmit }: ModalProps) => {
                 3
               </div>
               <label htmlFor="percentile" className="block text-sm font-semibold m-auto ml-0">
-                Update your <strong>Percentile</strong>
+                Update your <strong>current score (out of 15)</strong>
               </label>
               </div>
               <input
