@@ -41,59 +41,74 @@ const Modal = ({ isOpen, onClose, onSubmit }: ModalProps) => {
   return (
     isOpen && (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white p-8 rounded-lg shadow-lg w-80">
-          <h2 className="text-xl font-bold mb-4">Update Information</h2>
+        <div className="bg-white p-8 rounded-lg shadow-lg w-100">
+          <h2 className="text-xl font-bold mb-4">Update scores</h2>
           <form>
-            <div className="mb-4">
-              <label htmlFor="percentile" className="block text-sm font-semibold mb-1">
-                Percentile
+            <div className="mb-4 flex flex-row space-x-20 justify-end">
+              <div className="flex flex-row space-x-4 ml-0 m-auto">
+              <div className="w-8 h-8 m-auto text-sm p-0 text-bold bg-blue-900 text-white rounded-full flex items-center justify-center">
+                1
+              </div>
+              <label htmlFor="percentile" className="block text-sm font-semibold m-auto ml-0">
+                Update your <strong>Rank</strong>
               </label>
-              <input
-                type="number"
-                id="percentile"
-                value={percentile}
-                onChange={(e) => setPercentile(Number(e.target.value))}
-                className="w-full p-2 border border-gray-300 rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="rank" className="block text-sm font-semibold mb-1">
-                Rank
-              </label>
+              </div>
               <input
                 type="number"
                 id="rank"
                 value={rank}
                 onChange={(e) => setRank(Number(e.target.value))}
-                className="w-full p-2 border border-gray-300 rounded-md"
+                className="w-full max-w-40 p-2 border border-gray-300 rounded-md"
               />
             </div>
-            <div className="mb-4">
-              <label htmlFor="correctAns" className="block text-sm font-semibold mb-1">
-                Correct Answers
+            <div className="mb-4 flex flex-row">
+            <div className="flex flex-row space-x-4 ml-0 m-auto">
+              <div className="w-8 h-8 m-auto text-sm p-0 text-bold bg-blue-900 text-white rounded-full flex items-center justify-center">
+                2
+              </div>
+              <label htmlFor="percentile" className="block text-sm font-semibold m-auto ml-0">
+                Update your <strong>Percentile</strong>
               </label>
+              </div>
+              <input
+                type="number"
+                id="percentile"
+                value={percentile}
+                onChange={(e) => setPercentile(Number(e.target.value))}
+                className="w-full max-w-40 p-2 border border-gray-300 rounded-md"
+              />
+            </div>
+            <div className="mb-4 flex flex-row space-x-20 justify-end">
+            <div className="flex flex-row space-x-4 ml-0 m-auto">
+              <div className="w-8 h-8 text-sm p-0 text-bold bg-blue-900 text-white rounded-full flex items-center justify-center">
+                3
+              </div>
+              <label htmlFor="percentile" className="block text-sm font-semibold m-auto ml-0">
+                Update your <strong>Percentile</strong>
+              </label>
+              </div>
               <input
                 type="number"
                 id="correctAns"
                 value={correctAns}
                 onChange={(e) => setCorrectAns(Number(e.target.value))}
-                className="w-full p-2 border border-gray-300 rounded-md"
+                className="w-full max-w-40 p-2 border border-gray-300 rounded-md"
               />
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-end space-x-4 items-center">
               <button
                 type="button"
                 onClick={onClose}
-                className="bg-gray-500 text-white px-4 py-2 rounded-md"
+                className="text-blue-900 px-4 py-2 border border-blue-900 rounded-md"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="bg-blue-600 text-white px-4 py-2 rounded-md"
+                className="bg-blue-900 text-white px-4 py-2 rounded-md"
               >
-                Update
+                Save
               </button>
             </div>
           </form>
@@ -300,7 +315,7 @@ const SkillTestCard = ({ setPercentile, setRank, setCorrectAns, rank, percentile
             <p>Questions: 08 | Duration: 15 mins | Submitted on 5 June 2021</p>
           </div>
         </div>
-        <button onClick={() => setIsModalOpen(true)} className="bg-blue-600 text-white px-4 py-2 rounded">Update</button>
+        <button onClick={() => setIsModalOpen(true)} className="bg-blue-900 text-white px-4 py-2 rounded">Update</button>
       </div>
       <div className="pb-8 mb-12 border border-gray-400 border-opacity-30 rounded-md p-4">
         <p className="font-bold mb-4">Quick Statistics</p>
